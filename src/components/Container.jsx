@@ -18,7 +18,11 @@ function Container() {
       <button type='button' className='addApplicationBtn' onClick={togglePopup}>
         &#x0002B;
       </button>
+
+      {/* check the variable popupSeen in state, if true, show the popup, else hide it*/}
       {state.popupSeen ? <AddApplicationPopUp /> : null}
+
+      {/* the position of stage is fixed, so go through the applicationList and print the application with same stage number */}
       <Stage
         name='Incoming'
         applicationList={state.applicationList.filter(

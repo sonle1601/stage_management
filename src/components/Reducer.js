@@ -1,3 +1,4 @@
+// initial state with 4 stages, popup not show, array of 5 applications
 export const initialState = {
   minStage: 1,
   maxStage: 4,
@@ -47,6 +48,9 @@ export const initialState = {
     },
   ],
 };
+
+// CHANGE_STAGE: when prevStage or nextStage Button is pressed
+// TOGGLE_POPUP: change the state of popup, to show or hide in
 
 function reducer(state, action) {
   switch (action.type) {

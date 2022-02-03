@@ -3,16 +3,17 @@ import React, { useState } from 'react';
 import '../styles/AddApplicationPopUp.scss';
 
 function AddApplicationPopUp() {
+  // state of new application
   const [applicant, setApplicant] = useState('');
   const [jobName, setJobName] = useState('');
   const [age, setAge] = useState(0);
   const [company, setCompany] = useState('');
+
   const [state, dispatch] = useStateValue();
 
   const ids = state.applicationList.map((object) => {
     return object.id;
   });
-
   const maxId = Math.max(...ids);
 
   const togglePopup = () => {
@@ -21,6 +22,7 @@ function AddApplicationPopUp() {
     });
   };
 
+  // send the new application information to reducer
   const handleSubmit = (evt) => {
     evt.preventDefault();
     dispatch({
@@ -43,41 +45,42 @@ function AddApplicationPopUp() {
         <span className='close-icon' onClick={togglePopup}>
           x
         </span>
-        <h1>Add new Application</h1>
+        <h1 className='popup__name'>Add new Application</h1>
+
         <form onSubmit={handleSubmit}>
-          <label>
-            Applicant:
+          <p>
+            <label>Applicant:</label>
             <input
               type='text'
               value={applicant}
               onChange={(e) => setApplicant(e.target.value)}
             />
-          </label>
-          <label>
-            Age:
+          </p>
+          <p>
+            <label>Age:</label>
             <input
               type='number'
               value={age}
               onChange={(e) => setAge(e.target.value)}
             />
-          </label>
-          <label>
-            Job Name:
+          </p>
+          <p>
+            <label>Job Name:</label>
             <input
               type='text'
               value={jobName}
               onChange={(e) => setJobName(e.target.value)}
             />
-          </label>
-
-          <label>
-            Company:
+          </p>
+          <p>
+            <label>Company:</label>
             <input
               type='text'
               value={company}
               onChange={(e) => setCompany(e.target.value)}
             />
-          </label>
+          </p>
+
           <input type='submit' value='Submit' />
         </form>
       </div>

@@ -35,6 +35,7 @@ function Application({ applicant, jobName, company, stage, id }) {
       <h1 className='application__jobName'>{jobName}</h1>
       <h1 className='application__company'>{company}</h1>
       <div className='application__stageControl'>
+        {/* show prevStage button, if the stage is not the first one */}
         {stage > state.minStage ? (
           <button type='button' className='prevButton' onClick={prevStage}>
             &laquo;
@@ -42,6 +43,7 @@ function Application({ applicant, jobName, company, stage, id }) {
         ) : (
           ''
         )}
+        {/* show nextStage button, if the stage is not the last one */}
         {stage < state.maxStage ? (
           <button type='button' className='nextButton' onClick={nextStage}>
             &raquo;
