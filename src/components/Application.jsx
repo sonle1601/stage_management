@@ -12,7 +12,7 @@ function Application({ applicant, jobName, company, stage, id }) {
         : application
     );
     dispatch({
-      type: 'PREV_STAGE',
+      type: 'CHANGE_STAGE',
       applicationList: newApplicationList,
     });
   };
@@ -24,7 +24,7 @@ function Application({ applicant, jobName, company, stage, id }) {
         : application
     );
     dispatch({
-      type: 'NEXT_STAGE',
+      type: 'CHANGE_STAGE',
       applicationList: newApplicationList,
     });
   };

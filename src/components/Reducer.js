@@ -50,12 +50,7 @@ export const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'PREV_STAGE':
-      return {
-        ...state,
-        applicationList: action.applicationList,
-      };
-    case 'NEXT_STAGE':
+    case 'CHANGE_STAGE':
       return {
         ...state,
         applicationList: action.applicationList,
